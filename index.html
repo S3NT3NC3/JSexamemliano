@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Biometria</title>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="EstiloProyecto.css">
+		<script type="text/javascript">
+		//Salida de la pagina por link
+			function salida(){
+				return confirm("¿Desea Salir de la pagina y ver la bibliografia?"); 
+			}
+			
+			//Reloj que marca la hora al principio de la pagina 
+			function Ver_Hora()
+			{
+				var mihora = new Date();
+				var horas = mihora.getHours().toString();
+				var minutos = mihora.getMinutes().toString();
+				if (minutos.length == 1) minutos = "0" + minutos;
+				var segundos = mihora.getSeconds().toString();
+				if (segundos.length == 1) segundos = "0" + segundos;
+				document.forms[0].miReloj.value = horas + " : " + minutos + " : " + segundos;
+			}
+			
+			//Confirmacion de salida por boton
+			function ConfirSalida(){
+				alert("va a salir");
+				setTimeout("location.href='http://www.google.com'", 1000);
+			}
+			
+			//Saludo de Entrada
+			var nom;
+			nom=prompt ("Escribe tu nombre","Nombre");
+				alert("Mucho gusto y Bienvenido " + nom);
+			//Caja y Cambio de links
+			function Inicializar(){
+				var caja = document.getElementById("cajaContenido");
+				var link = document.getElementById("LinkV2B");
+				
+				link.href = "https://www.facebook.com/cesardejesus.navarrobarron";
+				caja.style.backgroundColor = "yellow";
+				caja.style.height = "100px";
+				caja.style.border = "1px solid black";
+			}
+			//Funcion para la obtencion del Link
+			function cambioLink(){
+				document.getElementById("Bibliografia").href = "https://es.wikipedia.org/wiki/Biometr%C3%ADa#Beneficios_de_la_tecnolog%C3%ADa_biom%C3%A9trica";
+			}
+			//Funcion que da alerta de que ya se dio el link
+			function alertar(mensaje) {
+				var estado = document.getElementById("estado");
+				estado.style.display = "block";
+				estado.innerHTML = mensaje + "<br/>" + estado.innerHTML;	
+			}
+			//Funcion que eliminara las advertencias cada 10 segundos
+			function apagar() {
+				var contenedor = document.getElementById("estado");
+				contenedor.style.visibility = "hidden";
+				contenedor.style.display = "none";
+			}
+			//Funcion que une la obtencion del link la alerta y su desactivacion  
+			//para que esten en una sola funcion
+			function Union(){
+				pop = setInterval("apagar()",5000);
+				cambioLink();
+				alertar('Ya tiene el Link');
+			}
+			
+			function PopUp() {
+				window.open('https://es.wikipedia.org/wiki/Biometr%C3%ADa#Beneficios_de_la_tecnolog%C3%ADa_biom%C3%A9trica', 'Nombre de la ventana', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=1,width=300,height=200,left = 390,top = 50');
+			}
+			//Funcion Ocultar y mostar columna
+			function ocultarColumna() {
+				var contenedor = document.getElementById("Col");
+				contenedor.style.visibility = "hidden";
+				contenedor.style.display = "none";
+			}
+
+			function mostrarColumna() {
+				var contenedor = document.getElementById("Col");
+				contenedor.style.visibility = "visible";
+				contenedor.style.display = "block"
+			}
+
+		</script>
+	</head>
+	
+	<!--Inicio Del Body-->
+
+	<body onload="Incializar()">
+		<div id="Agrupar">
+			<header id="Cabecera">
+				<h1 id="TituloPrincipal">Biometria</h1>
+			</header>
+				
+			<nav id="Menu">
+				<ul>
+					<li><a href="#AnclaDefinicion" class="Link">¿Que es?</a></li>
+					<li><a href="#AnclaHistoria" class="Link">Historia</a></li>
+					<li><a href="#AnclaBeneficios" class="Link">Beneficios</a></li>
+					<li><a href="#AnclaBibliografia" class="Link">Bibliografia</a></li>
+					<li><a href="#AnclaSalida" class="Link">Salida</a></li>
+					<li>
+						<form>
+							<p>
+							<input type="text" size="10" name="miReloj" id="Reloj">
+							</p>
+						</form>
+						<script>
+							var r = setInterval ("Ver_Hora()",500);
+						</script>
+					</li>
+				</ul>
+				
+			</nav>
+				
+			<section id="Seccion">
+				<h2 id="AnclaDefinicion">¿Qué es?</h2>
+				<p>
+					La biometría (del griego bios vida y metron medida) es la toma de medidas estandarizadas de los seres vivos o de procesos biológicos. Se llama también biometría al estudio para el reconocimiento inequívoco de personas basado en uno o más rasgos conductuales o físicos intrínsecos, que no mecánicos.
+					<br/>En las tecnologías de la información (TI), la «autentificación biométrica» o «biometría informática» es la aplicación de técnicas matemáticas y estadísticas sobre los rasgos físicos o de conducta de un individuo, para su autentificación, es decir, «verificar» su identidad. 
+				</p>
+				<h2 id="AnclaHistoria">Historia</h2>
+				<p>
+					La biometría no se puso en práctica en las culturas occidentales hasta finales del siglo XIX, pero era utilizada en China desde al menos el siglo XIV. Un explorador y escritor que respondía al nombre de Joao de Barros escribió que los comerciantes chinos estampaban las impresiones y las huellas de la palma de las manos de los niños en papel con tinta. Los comerciantes hacían esto como método para distinguir entre los niños jóvenes.
+					<br/>En Occidente, la identificación confiaba simplemente en la memoria de Eidetic (memoria fotográfica) hasta que Alphonse Bertillon, jefe del departamento fotográfico de la Policía de París, desarrolló el sistema antropométrico (también conocido más tarde como Bertillonage) en 1883. Este era el primer sistema preciso, ampliamente utilizado científicamente para identificar a criminales y convirtió a la biométrica en un campo de estudio. Funcionaba midiendo de forma precisa ciertas longitudes y anchuras de la cabeza y del cuerpo, así como registrando marcas individuales como tatuajes y cicatrices. El sistema de Bertillon fue adoptado extensamente en occidente hasta que aparecieron defectos en el sistema –principalmente problemas con métodos distintos de medidas y cambios de medida. Después de esto, las fuerzas policiales occidentales comenzaron a usar la huella dactilar– esencialmente el mismo sistema visto en China cientos de años antes. 
+				</p>
+				<h2 id="AnclaUso"></h2>
+				<p>
+					Uno de los beneficios que otorga la tecnología biométrica es que hace que no sea necesario llevar una tarjeta o llave para acceder a un edificio. Las infraestructuras de grandes redes empresariales, las identificaciones en el gobierno, las transacciones bancarias seguras, y los servicios sociales y de salud, entre otros ámbitos, ya se benefician del uso de este tipo de verificaciones.
+					<br/>Asociada a otras tecnologías de restricción de accesos, la biometría garantiza uno de los niveles de autenticación menos franqueables en la actualidad. Además, los inconvenientes de tener que recordar una password ó un número de PIN de acceso serán pronto superados gracias al uso de los métodos biométricos, debido a que estos últimos presentan notables ventajas: están relacionados de forma directa con el usuario, son exactos y permiten hacer un rastreo de auditorías. 
+				</p>
+				<h2 id="AnclaBeneficios">Beneficios</h2>
+				<p>
+					Uno de los beneficios que otorga la tecnología biométrica es que hace que no sea necesario llevar una tarjeta o llave para acceder a un edificio. Las infraestructuras de grandes redes empresariales, las identificaciones en el gobierno, las transacciones bancarias seguras, y los servicios sociales y de salud, entre otros ámbitos, ya se benefician del uso de este tipo de verificaciones.
+					<br/>Asociada a otras tecnologías de restricción de accesos, la biometría garantiza uno de los niveles de autenticación menos franqueables en la actualidad. Además, los inconvenientes de tener que recordar una password ó un número de PIN de acceso serán pronto superados gracias al uso de los métodos biométricos, debido a que estos últimos presentan notables ventajas: están relacionados de forma directa con el usuario, son exactos y permiten hacer un rastreo de auditorías. 
+				</p>
+			</section>
+				
+			<aside id="Columna">
+				<input type="button" value="Ocultar" onclick="ocultarColumna()">
+				<input type="button" value="Mostrar" onclick="mostrarColumna()">
+				<div id="Col">
+				<!--Cajita Que Cambia de colores OwO-->
+					<div id="cajaContenido" onmouseover="this.style.backgroundColor='#00FFFF'" onmouseout="this.style.backgroundColor='#008080'">
+					<a id="LinkV2B" class="Link">Link a la web</a>
+					<div id="estado"></div>
+					<input type="button" onclick="Union()" value="Obtener Link a la pagina de datos" class="Boton"/>
+				</div>
+				<!--Fin de la cajita TTnTT-->
+			<p>
+				<img src = "Img1.jpeg" alt="Imagen de la nanotecnologia" height=170px width=340px/>
+			</p>
+			<p class="TextoPieImagen">
+				<i></i>
+			</p>
+			<p>
+				<img src = "Img2.jpg" alt="Imagen de la nanotecnologia" height=170px width=340px/>
+			</p>
+			<p class="TextoPieImagen">
+				<i></i>
+			</p>
+			<p>
+				<img src = "Img3.jpeg" alt="Imagen de la nanotecnologia" height=170px width=340px/>
+			</p>
+			<p class="TextoPieImagen">
+				<i></i>
+			</p>
+			<p>
+				<img src = "Img4.jpeg" alt="Imagen de la nanotecnologia" height=170px width=340px/>
+			</p>
+			<p class="TextoPieImagen">
+				<i></i>
+			</p>
+			
+			<input type="button" onclick="PopUp()" value="Obtener pagina PopUp del tema" class="Boton"/>
+			<h2 id="AnclaBibliografia">Bibliografia</h2>
+				<ul>
+					<li><a id="Bibliografia">https://es.wikipedia.org</a></li>
+				</ul>
+				<h2 id="AnclaSalida">Salida</h2>
+					<input type="button" value="Salir" onclick="ConfirSalida()" class="Boton">
+					<input type="button" value="Atrás" onclick="history.go(-1)" class="Boton">
+				</div>
+			</aside>
+			
+				
+			<footer id="Pie">
+				<p class="TextoPiePagina">
+					Programa Hecho por Miranda Huerta Jesus Emiliano
+				</p>
+				<div style="width: 1000px; height: 20px; background-color: #66CDAA" onclick="alert('¡¡¡Yamete Kudasai!!!')" align="center">Cajita Sensible</div>
+			</footer>
+			
+		</div>
+	</body>
+</html>
+
